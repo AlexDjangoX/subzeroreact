@@ -1,3 +1,5 @@
+// two-way-binding: Listen changes update state & feed state back into input, allows us to set value line 29 - 31
+
 import React, { useState } from "react";
 import "../NewExpense/css/ExpenseForm.css";
 
@@ -24,31 +26,40 @@ const ExpenseForm = () => {
       date: new Date(enteredDate),
     };
     console.log(expenseData);
+    setEnteredTitle("");
+    setEnteredDate("");
+    setEnteredAmount("");
   };
 
   return (
     <form onSubmit={onSubmitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
-          <label>{enteredTitle}</label>
-          <input onChange={titleChangeHandler} type="text"></input>
+          <label>Title</label>
+          <input
+            onChange={titleChangeHandler}
+            type="text"
+            value={enteredTitle}
+          ></input>
         </div>
         <div className="new-expense__control">
-          <label>{enteredAmount}</label>
+          <label>Amount</label>
           <input
             onChange={amountChangeHandler}
             type="number"
             min="0.01"
             step="0.01"
+            value={enteredAmount}
           ></input>
         </div>
         <div className="new-expense__control">
-          <label>{enteredDate}</label>
+          <label>Date</label>
           <input
             onChange={dateChangeHandler}
             type="date"
             min="2019-01-01"
             max="2022-12-31"
+            value={enteredDate}
           ></input>
         </div>
       </div>
