@@ -1,3 +1,4 @@
+import React from "react";
 import Expenses from "./components/Expenses/ExpensesList";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     {
       id: "e4",
       title: "New Desk (Wooden)",
-      amount: 450,
+      amount: 450.79,
       date: new Date(2021, 5, 12),
     },
   ];
