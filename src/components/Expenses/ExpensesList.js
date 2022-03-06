@@ -20,17 +20,23 @@ function ExpensesList(props) {
   return (
     <Card className="expenses">
       <ExpenseFilter selectedYear={selectedYearHandler} />
-      {filteredExpense.map((item) => {
-        return (
-          <ExpenseItem
-            key={Math.random()}
-            id={item.id}
-            title={item.title}
-            amount={item.amount}
-            date={item.date}
-          />
-        );
-      })}
+      {filteredExpense.length === 0 ? (
+        <p>There are no items listed for this year</p>
+      ) : (
+        filteredExpense.map((item) => {
+          return (
+            <ExpenseItem
+              key={Math.random()}
+              id={item.id}
+              title={item.title}
+              amount={item.amount}
+              date={item.date}
+              onDelete={props.onRemoveHandler}
+              // onDelete={() => props.onRemoveHandler(item.id)}
+            />
+          );
+        })
+      )}
     </Card>
   );
 }

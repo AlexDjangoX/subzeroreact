@@ -30,7 +30,7 @@
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  background-color: #40005d;
+  background-color: #5e5e5e;
   border: 1px solid white;
   padding: 0.5rem;
   border-radius: 12px;
@@ -52,4 +52,110 @@
     font-size: 1.25rem;
     padding: 0.5rem 1.5rem;
   }
+}
+
+/* COLOR VARIABLES */
+
+.green {
+  --clr-900: #1b5e20;
+  --clr-800: #2e7d32;
+  --clr-700: #388e3c;
+  --clr-600: #43a047;
+  --clr-500: #4caf50;
+  --clr-400: #66bb6a;
+  --clr-300: #81c784;
+  --clr-200: #a5d6a7;
+  --clr-100: #c8e6c9;
+  --clr-050: #e8f5e9;
+  --white: #ffffff;
+}
+
+.red {
+  --clr-900: #b71c1c;
+  --clr-800: #c62828;
+  --clr-700: #d32f2f;
+  --clr-600: #e53935;
+  --clr-500: #f44336;
+  --clr-400: #ef5350;
+  --clr-300: #e57373;
+  --clr-200: #ef9a9a;
+  --clr-100: #ffcdd2;
+  --clr-050: #ffebee;
+  --white: #ffffff;
+}
+
+/* BUTTON STYLES */
+
+button {
+  padding: 0rem 2rem;
+  min-width: 10ch;
+
+  margin: 0% 4rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 2rem;
+  letter-spacing: 0.075rem;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: 200ms all ease-in-out;
+}
+
+button.contained {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.18);
+  border: 1px solid var(--clr-600);
+  background-color: var(--clr-600);
+
+  color: var(--white);
+}
+
+button.contained:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.24);
+  border: 1px solid var(--clr-700);
+  background-color: var(--clr-700);
+
+  color: var(--white);
+}
+
+button.outlined {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.18);
+  border: 1px solid var(--clr-600);
+  background-color: var(--clr-100);
+
+  color: var(--clr-600);
+}
+
+button.outlined:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18), 0 3px 6px rgba(0, 0, 0, 0.24);
+  border: 1px solid var(--clr-600);
+  background-color: var(--clr-200);
+
+  color: var(--clr-600);
+}
+
+button.text {
+  border: 1px solid transparent;
+  background-color: transparent;
+
+  color: var(--clr-600);
+}
+
+button.text:hover {
+  border: 1px solid var(--clr-050);
+  background-color: var(--clr-050);
+
+  color: var(--clr-600);
 }
