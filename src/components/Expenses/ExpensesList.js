@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import ExpenseItem from "./ExpenseItem";
+import ExpenseFilter from "../NewExpense/ExpenseFilter";
 import Card from "../UI/Card";
 
-function Expenses(props) {
+function ExpensesList(props) {
+  const [year, setYear] = useState("2022");
+
+  const selectedYearHandler = (year) => {
+    setYear(year);
+  };
+
   return (
     <Card className="expenses">
+      <ExpenseFilter selectedYear={selectedYearHandler} />
       {props.data.map((item) => {
         return (
           <ExpenseItem
@@ -19,4 +27,4 @@ function Expenses(props) {
   );
 }
 
-export default Expenses;
+export default ExpensesList;
