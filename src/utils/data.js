@@ -19,8 +19,26 @@ export const data = [
   },
   {
     id: "e4",
-    title: "New Desk (Wooden)",
+    title: "New Desk",
     amount: 450.79,
-    date: new Date(2021, 5, 12),
+    date: new Date(2019, 5, 12),
+  },
+  {
+    id: "e5",
+    title: "Toaster",
+    amount: 450.79,
+    date: new Date(2019, 5, 12),
+  },
+  {
+    id: "e6",
+    title: "Mouse",
+    amount: 450.79,
+    date: new Date(2020, 5, 12),
+  },
+  {
+    id: "e6",
+    title: "New Dog",
+    amount: 450.79,
+    date: new Date(2020, 5, 12),
   },
 ];
