@@ -20,25 +20,25 @@ export const data = [
   {
     id: "e4",
     title: "New Desk",
-    amount: 450.79,
+    amount: 50.79,
     date: new Date(2019, 5, 12),
   },
   {
     id: "e5",
     title: "Toaster",
-    amount: 450.79,
+    amount: 890.79,
     date: new Date(2019, 5, 12),
   },
   {
     id: "e6",
     title: "Mouse",
-    amount: 450.79,
+    amount: 350.79,
     date: new Date(2020, 5, 12),
   },
   {
-    id: "e6",
+    id: "e7",
     title: "New Dog",
-    amount: 450.79,
+    amount: 850.79,
     date: new Date(2020, 5, 12),
   },
 ];
