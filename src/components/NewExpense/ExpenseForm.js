@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import "../NewExpense/css/ExpenseForm.css";
 
-const ExpenseForm = ({ setExpenses }) => {
+const ExpenseForm = ({ setExpenses, stopEditing }) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -23,11 +23,12 @@ const ExpenseForm = ({ setExpenses }) => {
     const expenseData = {
       id: Math.random(),
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
-    setExpenses((prevs) => {
-      return [...prevs, expenseData];
+    setExpenses((previous) => {
+      stopEditing(false);
+      return [...previous, expenseData];
     });
     setEnteredTitle("");
     setEnteredDate("");
@@ -67,6 +68,9 @@ const ExpenseForm = ({ setExpenses }) => {
         </div>
       </div>
       <div>
+        <button type="button" onClick={stopEditing}>
+          Cancel
+        </button>
         <button type="submit">Add expense</button>
       </div>
     </form>
