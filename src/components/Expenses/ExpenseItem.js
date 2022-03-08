@@ -18,7 +18,7 @@ const ExpenseItem = (props) => {
         Delete
       </button> */}
       <button
-        onClick={() => props.onDelete(props.item.id)}
+        onClick={() => props.onRemoveExpense(props.item.id)}
         className="text red"
       >
         Delete

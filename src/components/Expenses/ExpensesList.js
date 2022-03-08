@@ -5,7 +5,7 @@ import Card from "../UI/Card";
 import ExpensesChart from "./ExpensesChart";
 
 function ExpensesList(props) {
-  const [year, setYear] = useState("2022");
+  const [year, setYear] = useState("All");
 
   const onSelectYear = (year) => {
     setYear(year);
@@ -18,6 +18,11 @@ function ExpensesList(props) {
     return expense.date.getFullYear().toString() === year;
   });
 
+  const onRemoveExpense = (id) => {
+    const newExpensesList = props.data.filter((expense) => expense.id !== id);
+    props.setExpenses(newExpensesList);
+  };
+
   return (
     <Card className="expenses">
       <ExpenseFilter onSelectYear={onSelectYear} />
@@ -29,12 +34,12 @@ function ExpensesList(props) {
           return (
             <ExpenseItem
               key={Math.random()}
-              // // id={item.id}
-              // // title={item.title}
-              // // amount={item.amount}
-              // // date={item.date}
+              // id={item.id}
+              // title={item.title}
+              // amount={item.amount}
+              // date={item.date}
               item={item}
-              onDelete={props.onRemoveExpense}
+              onRemoveExpense={onRemoveExpense}
               // onDelete={() => props.onRemoveHandler(item.id)}
             />
           );
